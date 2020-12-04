@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 
-namespace PF04
+namespace PF06
 {
     class Program
     {
@@ -15,9 +16,8 @@ namespace PF04
             int MAX = 10000;
             int SLEEP = 5 * 1000;
             bool stopMonitor = false;
-            List<Thread> threads = new List<Thread>();
-            CountdownEvent cde = new CountdownEvent(MAX);
             DateTime now = DateTime.Now;
+            List<Task> tasks = new List<Task>();
 
             #region 建立與統計最多執行緒數量的執行緒
             Thread monitorWorker = new Thread(() =>
@@ -37,32 +37,23 @@ namespace PF04
             for (int i = 0; i < MAX; i++) { delay.Add(0); }
             #endregion
 
-            #region 建立10000個執行緒
-            for (int i = 0; i < MAX; i++)
-            {
-                int idx = i;
-                Thread thread = new Thread(x =>
-                {
-                    delay[idx] = (DateTime.Now - now).TotalMilliseconds;
-                    Thread.Sleep(SLEEP);
-                    cde.Signal();
-                });
-                thread.IsBackground = true;
-                threads.Add(thread);
-            }
-            #endregion
-
-            #region 啟動並且執行10000個執行緒
+            #region 啟動並且執行10000個 Task
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             now = DateTime.Now;
             for (int i = 0; i < MAX; i++)
             {
-                threads[i].Start();
+                int idx = i;
+                Task task = Task.Factory.StartNew(() =>
+                {
+                    delay[idx] = (DateTime.Now - now).TotalMilliseconds;
+                    Thread.Sleep(SLEEP);
+                }, TaskCreationOptions.LongRunning);
+                tasks.Add(task);
             }
             #endregion
 
-            cde.Wait(); // 等待 10000 個執行緒全部執行完成
+            Task.WaitAll(tasks.ToArray());
             stopwatch.Stop();
             stopMonitor = true;
             Console.WriteLine();
