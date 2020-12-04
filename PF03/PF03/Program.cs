@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Linq;
+using System.Threading;
 
-namespace PF02
+namespace PF03
 {
     class Program
     {
@@ -16,6 +15,8 @@ namespace PF02
             int MAX = 10000;
             int SLEEP = 5 * 1000;
             bool stopMonitor = false;
+            List<Thread> threads = new List<Thread>();
+            CountdownEvent cde = new CountdownEvent(MAX);
 
             #region 建立與統計最多執行緒數量的執行緒
             Thread monitorWorker = new Thread(() =>
@@ -30,18 +31,36 @@ namespace PF02
             monitorWorker.Start();
             #endregion
 
+            #region 建立10000個執行緒
+            for (int i = 0; i < MAX; i++)
+            {
+                int idx = i;
+                Thread thread = new Thread(x =>
+                {
+                    Thread.Sleep(SLEEP);
+                    cde.Signal();
+                });
+                thread.IsBackground = true;
+                threads.Add(thread);
+            }
+            #endregion
+
+            #region 啟動並且執行10000個執行緒
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            Parallel.For(0, MAX, _ =>
+            for (int i = 0; i < MAX; i++)
             {
-                Thread.Sleep(SLEEP);
-            });
+                threads[i].Start();
+            }
+            #endregion
+
+            cde.Wait(); // 等待 10000 個執行緒全部執行完成
             stopwatch.Stop();
             stopMonitor = true;
             Console.WriteLine();
             Console.WriteLine($"{stopwatch.ElapsedMilliseconds} ms");
 
-            Console.WriteLine($"Max {threadUsage.Max(x=>x.NumberOfThreads)} Threads");
+            Console.WriteLine($"Max {threadUsage.Max(x => x.NumberOfThreads)} Threads");
         }
     }
 }
