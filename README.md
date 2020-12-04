@@ -8,7 +8,7 @@
 |範例體驗|PF04|了解 10000 執行緒的每個執行緒執行所需時間|
 |範例體驗|PF05|聽說 Task 很厲害，那就使用 10000 Tasks(Task.Run)|
 |範例體驗|PF06|用Task.Factory.StartNew 建立 10000 Tasks|
-||||
+|範例體驗|PF07|使用 Task.Delay 來取代封鎖 Block 的 Thread.Sleep|
 ||||
 ||||
 ||||
