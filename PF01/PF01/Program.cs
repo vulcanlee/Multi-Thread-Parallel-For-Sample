@@ -9,12 +9,18 @@ namespace PF01
     {
         static void Main(string[] args)
         {
+            int MAX = 100;
+            int SLEEP = 5 * 1000;
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            Parallel.For(0, 10000, _ =>
+
+            #region 開始平行執行10000個作業
+            Parallel.For(0, MAX, _ =>
             {
-                Thread.Sleep(5 * 1000);
+                Thread.Sleep(SLEEP);
             });
+            #endregion
+
             stopwatch.Stop();
             Console.WriteLine();
             Console.WriteLine($"{stopwatch.ElapsedMilliseconds} ms");
