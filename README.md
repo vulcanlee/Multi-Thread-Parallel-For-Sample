@@ -12,8 +12,6 @@
 |範例體驗|PF08|Parallel.For 改成使用 Task.Delay|
 |範例體驗|PF09|修正 Parallel.For 改成使用 Task.Delay 造成的錯誤|
 ||||
-||||
-||||
-||||
-||||
+
+![由 Parallel.For 來看多執行緒程式設計](用最快的速度完成他，不考慮CPU記憶體.png)
 
