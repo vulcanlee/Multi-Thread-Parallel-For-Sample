@@ -9,7 +9,9 @@ namespace PF12
         static void Main(string[] args)
         {
             Console.WriteLine($"Now:{DateTime.Now}");
-            #region 當要平行處理 20 次迴圈，Parallel.For 內建同步機制，即迴圈內所有作業都完成，才算完成
+            #region 平行處理 20 次迴圈，平行處理的作業方式採用預設設定值
+            // 根據預設，類別上的方法 Parallel 會嘗試使用所有可用的處理器、無法取消，並以預設的 TaskScheduler () 為目標 TaskScheduler.Default
+            // https://docs.microsoft.com/zh-tw/dotnet/api/system.threading.tasks.paralleloptions?view=net-5.0&WT.mc_id=DT-MVP-5002220
             Parallel.For(0, 20, (i) =>
             {
                 Console.Write($"{i} ");
