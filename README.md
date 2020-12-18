@@ -11,7 +11,8 @@
 |範例體驗|PF07|使用 Task.Delay 來取代封鎖 Block 的 Thread.Sleep|
 |範例體驗|PF08|Parallel.For 改成使用 Task.Delay|
 |範例體驗|PF09|修正 Parallel.For 改成使用 Task.Delay 造成的錯誤|
-|範例體驗|PF10|Parallel.For 的同步特性|
+|範例體驗|PF10|Parallel.For 平行迴圈程式設計的同步特性|
+|範例體驗|PF11|同步迴圈處理特性|
 ||||
 
 ![由 Parallel.For 來看多執行緒程式設計](用最快的速度完成他，不考慮CPU記憶體.png)
