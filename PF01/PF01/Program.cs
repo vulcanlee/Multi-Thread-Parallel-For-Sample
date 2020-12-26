@@ -9,7 +9,7 @@ namespace PF01
     {
         static void Main(string[] args)
         {
-            int MAX = 100;
+            int MAX = 10000;
             int SLEEP = 5 * 1000;
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
