@@ -23,7 +23,7 @@ namespace PF17
             Console.WriteLine($"現行執行環境的執行緒集區參數");
             Console.WriteLine($"可並行使用之執行緒集區的要求數:{maxWorkerThreads} / {maxIocThreads}");
             Console.WriteLine($"執行緒集區建立的執行緒最小數目:{minWorkerThreads} / {minIocThreads}");
-            minWorkerThreads = 3000;
+            minWorkerThreads = 500;
             minIocThreads = 100;
             maxWorkerThreads = MAX;
             ThreadPool.SetMaxThreads(maxWorkerThreads, maxIocThreads);
