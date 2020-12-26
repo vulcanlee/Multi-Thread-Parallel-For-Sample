@@ -37,33 +37,17 @@ namespace PF17
             Console.WriteLine();
             #endregion
 
-            #region 蒐集該執行程序使用到的執行緒數量
+            #region 蒐集執行緒集區使用到的執行緒數量
             bool isMonitor = true;
             new Thread(() =>
             {
                 while (isMonitor)
                 {
-                    ThreadPool.GetAvailableThreads(out avaWorkerThreads, out avaIocThreads);
-                    ThreadPool.GetMaxThreads(out maxWorkerThreads, out maxIocThreads);
-                    //Console.Write($"{maxWorkerThreads - avaWorkerThreads}-{Process.GetCurrentProcess().Threads.Count} ");
-                    Console.Write($"{Process.GetCurrentProcess().Threads.Count} ");
-                    Thread.Sleep(200);
+                    //Console.Write($"{Process.GetCurrentProcess().Threads.Count} ");
+                    Console.Write($"{ThreadPool.ThreadCount} ");
+                    Thread.Sleep(500);
                 }
             }).Start();
-            #endregion
-
-            #region 快速產生過多執行緒而造成的記憶體不足問題
-            //for (int i = 0; i < MAX; i++)
-            //{
-            //    new Thread(() =>
-            //    {
-            //        //Console.Write($"{i} ");
-            //        Thread.Sleep(SLEEP * 1000);
-            //    }).Start();
-            //}
-
-            //Console.WriteLine("Press any key for continuing...");
-            //Console.ReadKey();
             #endregion
 
             #region 透過執行緒集區取得過多執行緒的使用情況
@@ -75,7 +59,6 @@ namespace PF17
             {
                 ThreadPool.QueueUserWorkItem(_ =>
                 {
-                    //Console.Write($"{i} ");
                     Thread.Sleep(SLEEP);
                     cde.Signal();
                 });

@@ -22,6 +22,7 @@ namespace PF02
             {
                 while (!stopMonitor)
                 {
+                    Console.Write($"{Process.GetCurrentProcess().Threads.Count} ");
                     Thread.Sleep(200);
                     threadUsage.Add((DateTime.Now,
                         Process.GetCurrentProcess().Threads.Count));
@@ -32,6 +33,12 @@ namespace PF02
 
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
+
+            ParallelOptions options = new ParallelOptions()
+            {
+                MaxDegreeOfParallelism = -1,
+                TaskScheduler = TaskScheduler.Default
+            };
             Parallel.For(0, MAX, _ =>
             {
                 Thread.Sleep(SLEEP);
@@ -41,7 +48,7 @@ namespace PF02
             Console.WriteLine();
             Console.WriteLine($"{stopwatch.ElapsedMilliseconds} ms");
 
-            Console.WriteLine($"Max {threadUsage.Max(x=>x.NumberOfThreads)} Threads");
+            Console.WriteLine($"Max {threadUsage.Max(x => x.NumberOfThreads)} Threads");
         }
     }
 }
