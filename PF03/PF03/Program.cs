@@ -24,6 +24,7 @@ namespace PF03
                 while (!stopMonitor)
                 {
                     Thread.Sleep(200);
+                    Console.Write($"{Process.GetCurrentProcess().Threads.Count} ");
                     threadUsage.Add((DateTime.Now,
                         Process.GetCurrentProcess().Threads.Count));
                 }
@@ -55,8 +56,9 @@ namespace PF03
             #endregion
 
             cde.Wait(); // 等待 10000 個執行緒全部執行完成
-            stopwatch.Stop();
             stopMonitor = true;
+            stopwatch.Stop();
+            Thread.Sleep(500);
             Console.WriteLine();
             Console.WriteLine($"{stopwatch.ElapsedMilliseconds} ms");
 
