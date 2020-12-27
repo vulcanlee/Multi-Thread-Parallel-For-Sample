@@ -22,7 +22,7 @@ namespace PF02
             {
                 while (!stopMonitor)
                 {
-                    Console.Write($"{Process.GetCurrentProcess().Threads.Count} ");
+                    //Console.Write($"{Process.GetCurrentProcess().Threads.Count} ");
                     Thread.Sleep(200);
                     threadUsage.Add((DateTime.Now,
                         Process.GetCurrentProcess().Threads.Count));
