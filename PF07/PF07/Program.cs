@@ -25,6 +25,7 @@ namespace PF07
                 while (!stopMonitor)
                 {
                     Thread.Sleep(200);
+                    Console.Write($"{Process.GetCurrentProcess().Threads.Count} ");
                     threadUsage.Add((DateTime.Now,
                         Process.GetCurrentProcess().Threads.Count));
                 }
@@ -56,15 +57,11 @@ namespace PF07
             Task.WaitAll(tasks.ToArray());
             stopwatch.Stop();
             stopMonitor = true;
+            Thread.Sleep(500);
             Console.WriteLine();
             Console.WriteLine($"{stopwatch.ElapsedMilliseconds} ms");
 
             Console.WriteLine($"Max {threadUsage.Max(x => x.NumberOfThreads)} Threads");
-
-            foreach (var item in delay)
-            {
-                Console.Write($" {item} ");
-            }
         }
     }
 }

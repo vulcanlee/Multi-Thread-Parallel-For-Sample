@@ -9,6 +9,20 @@ namespace PF09
     {
         static void Main(string[] args)
         {
+            bool stopMonitor = false;
+
+            #region 建立與統計最多執行緒數量的執行緒
+            Thread monitorWorker = new Thread(() =>
+            {
+                while (!stopMonitor)
+                {
+                    Thread.Sleep(200);
+                    Console.Write($"{Process.GetCurrentProcess().Threads.Count} ");
+                }
+            });
+            monitorWorker.Start();
+            #endregion
+
             CountdownEvent cde = new CountdownEvent(10000);
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -21,6 +35,8 @@ namespace PF09
 
             cde.Wait();
             stopwatch.Stop();
+            stopMonitor = true;
+            Thread.Sleep(500);
             Console.WriteLine();
             Console.WriteLine($"{stopwatch.ElapsedMilliseconds} ms");
         }
