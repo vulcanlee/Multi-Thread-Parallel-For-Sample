@@ -24,6 +24,13 @@ namespace PF09
             #endregion
 
             CountdownEvent cde = new CountdownEvent(10000);
+            var timer = new System.Timers.Timer();
+            timer.Interval = 3500;
+            timer.Elapsed += (s,e)=>
+            {
+                int foo = 999;
+            };
+            timer.Enabled = true;timer.Start();
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             Parallel.For(0, 10000, async (i) =>
