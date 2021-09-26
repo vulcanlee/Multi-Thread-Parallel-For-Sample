@@ -20,6 +20,9 @@
 |範例體驗|PF16|透過執行緒集區(預設參數)取得過多執行緒的使用情況|
 |範例體驗|PF17|透過執行緒集區(修正參數)取得過多執行緒的使用情況|
 |範例體驗|PF18|Parallel.For 透過執行緒集區準備10000個執行緒的結果|
+|挑戰練習|PF19|.NET Framework 使用 Parallel.For 非同步 呼叫 100 次 Web API|
+|挑戰練習|PF20|.NET Framework 使用 100 Task 完成 非同步 呼叫 100 次 Web API|
+|挑戰練習|PF21|.NET Core 使用 Parallel.For 非同步 呼叫 100 次 Web API|
 ||||
 
 ![由 Parallel.For 來看多執行緒程式設計](用最快的速度完成他，不考慮CPU記憶體.png)
