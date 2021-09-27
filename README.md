@@ -23,6 +23,7 @@
 |挑戰練習|PF19|.NET Framework 使用 Parallel.For 非同步 呼叫 100 次 Web API|
 |挑戰練習|PF20|.NET Framework 使用 100 Task 完成 非同步 呼叫 100 次 Web API|
 |挑戰練習|PF21|.NET Core 使用 Parallel.For 非同步 呼叫 100 次 Web API|
+|範例體驗|PF22|用 Parallel.For 設計計數器|
 ||||
 
 ![由 Parallel.For 來看多執行緒程式設計](用最快的速度完成他，不考慮CPU記憶體.png)
