@@ -46,6 +46,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PF21", "PF21\PF21\PF21.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PF22", "PF22\PF22\PF22.csproj", "{CC53FC7D-CB1F-4CD8-B798-4C4DAB3554AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PF23", "PF23\PF23.csproj", "{0552FEF3-6D42-4428-B713-5808668E735C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -230,6 +232,14 @@ Global
 		{CC53FC7D-CB1F-4CD8-B798-4C4DAB3554AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CC53FC7D-CB1F-4CD8-B798-4C4DAB3554AD}.Release|x86.ActiveCfg = Release|Any CPU
 		{CC53FC7D-CB1F-4CD8-B798-4C4DAB3554AD}.Release|x86.Build.0 = Release|Any CPU
+		{0552FEF3-6D42-4428-B713-5808668E735C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0552FEF3-6D42-4428-B713-5808668E735C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0552FEF3-6D42-4428-B713-5808668E735C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0552FEF3-6D42-4428-B713-5808668E735C}.Debug|x86.Build.0 = Debug|Any CPU
+		{0552FEF3-6D42-4428-B713-5808668E735C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0552FEF3-6D42-4428-B713-5808668E735C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0552FEF3-6D42-4428-B713-5808668E735C}.Release|x86.ActiveCfg = Release|Any CPU
+		{0552FEF3-6D42-4428-B713-5808668E735C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
