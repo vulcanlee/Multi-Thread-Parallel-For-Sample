@@ -7,6 +7,17 @@ using System.Threading.Tasks;
 
 namespace PF18
 {
+    /// <summary>
+    /// PF18|Parallel.For 透過執行緒集區準備10000個執行緒的結果
+    /// 
+    /// 在這個範例，將會使用 ThreadPool.SetMaxThreads 指定執行緒集區預先建議 1 萬個執行緒
+    /// 接著使用 Parallel.For 來平行 1 萬次，每次休息 5 秒鐘
+    /// 透過這個專案的執行結果來分析、理解為什麼會有這樣的執行表現
+    /// 
+    /// 雖然指定一開始取得 1 萬個執行緒，可是，在這個專案中，並不會一下就取得 1 萬個執行緒，
+    /// 而是最多僅能夠同時使用到 8866 執行緒，因此，
+    /// 想要一下子就有 1 萬個執行緒立馬來使用與執行，可以使用自行建立執行緒物件的方式
+    /// </summary>
     class Program
     {
         static List<(DateTime current, int NumberOfThreads)> threadUsage =
