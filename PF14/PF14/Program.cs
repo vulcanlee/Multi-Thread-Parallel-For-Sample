@@ -4,6 +4,14 @@ using System.Threading.Tasks;
 
 namespace PF14
 {
+    /// <summary>
+    /// PF14|Parallel.For 了解執行緒集區的運作方式
+    /// 
+    /// 透過平行處理 200 次迴圈，了解執行緒集區的運作方式
+    /// 採用方法為觀察每次 * 出現的數量與頻率，是否可以了解或者推敲其內部運作方式呢？
+    /// 對於 Parallel.For 若無特別指定，預設將會從 執行緒集區 獲得執行緒
+    /// 因此，了解執行緒集區運作方式，將會有助於更好的操控 Parallel.For API
+    /// </summary>
     class Program
     {
         static void Main(string[] args)

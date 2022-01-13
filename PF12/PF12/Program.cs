@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 namespace PF12
 {
     /// <summary>
+    /// PF12|Parallel.For 平行迴圈程式設計的平行度預設特性
+    /// 
     /// 透過這個範例程式來嘗試觀察 Parallel.For 的內部運作方式，嘗試推敲出如何最佳使用 Parallel.For 這個 API
     /// 觀察每個索引值出現位置，每次最多出現索引值的數量，每次執行結果是否都相同，這又代表甚麼意義呢？
     /// 這裡是設計作法：Parallel 會嘗試使用所有可用的處理器、無法取消，並以預設的 TaskScheduler () 為目標 TaskScheduler.Default

@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 namespace PF13
 {
     /// <summary>
+    /// PF13|Parallel.For 平行迴圈程式設計的指定平行工作數目上限特性
+    /// 
     /// 使用這個範例來觀察與指定最大平行處理作業數量
     /// 透過建立 ParallelOptions.MaxDegreeOfParallelism 屬性，來修正平行處理作業的最大數量
     /// 預設若沒有特別指定， Parallel.For 會使用同時執行的作業數目沒有任何限制方式來運行

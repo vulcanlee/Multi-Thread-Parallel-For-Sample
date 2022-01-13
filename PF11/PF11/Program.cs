@@ -4,6 +4,8 @@ using System.Threading;
 namespace PF11
 {
     /// <summary>
+    /// PF11|使用同步程式設計之迴圈處理特性
+    /// 
     /// 在這個範例中，將會把 PF10|Parallel.For 平行迴圈程式設計的作法
     /// 修改成為同步方式來執行，也就是改成 for (int i = 0; i < 8; i++)
     /// 因此，要執行 20 次迴圈，所完成時間為迴圈內所有工作處理時間總和
