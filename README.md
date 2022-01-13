@@ -12,7 +12,7 @@
 |範例體驗|PF08|Parallel.For 改成使用 Task.Delay|
 |範例體驗|PF09|修正 Parallel.For 改成使用 Task.Delay 造成的錯誤|
 |範例體驗|PF10|Parallel.For 平行迴圈程式設計的同步特性|
-|範例體驗|PF11|同步迴圈處理特性|
+|範例體驗|PF11|使用同步程式設計之迴圈處理特性|
 |範例體驗|PF12|Parallel.For 平行迴圈程式設計的平行度預設特性|
 |範例體驗|PF13|Parallel.For 平行迴圈程式設計的指定平行工作數目上限特性|
 |範例體驗|PF14|Parallel.For 了解執行緒集區的運作方式|

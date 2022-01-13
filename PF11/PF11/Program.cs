@@ -3,6 +3,11 @@ using System.Threading;
 
 namespace PF11
 {
+    /// <summary>
+    /// 在這個範例中，將會把 PF10|Parallel.For 平行迴圈程式設計的作法
+    /// 修改成為同步方式來執行，也就是改成 for (int i = 0; i < 8; i++)
+    /// 因此，要執行 20 次迴圈，所完成時間為迴圈內所有工作處理時間總和
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
@@ -13,7 +18,7 @@ namespace PF11
             for (int i = 0; i < 8; i++)
             {
                 // 模擬隨機等待 1~2 秒鐘
-                Thread.Sleep(random.Next(1000, 2000));
+                Thread.Sleep(random.Next(1000, 5000));
             }
             #endregion
             // 請觀察開始執行時間與結束時間輸出值

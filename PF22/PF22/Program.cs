@@ -23,7 +23,7 @@ namespace PF22
             object locker = new object();
             Parallel.For(0, MAX, i =>
             {
-                lock (locker)
+                //lock (locker)
                 {
                     counter = counter + 1;
                 }
